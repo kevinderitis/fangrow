@@ -1,10 +1,12 @@
-const components = {
+import { platformsData } from './data.js';
+
+export const components = {
     header: () => `
         <header>
             <nav>
                 <div class="logo">Fangrow</div>
                 <div class="nav-links">
-                    <a href="#" onclick="router.navigate('/')">Inicio</a>
+                    <a href="#">Inicio</a>
                     <a href="#plataformas">Plataformas</a>
                     <a href="#contacto">Contacto</a>
                 </div>
@@ -49,9 +51,9 @@ const components = {
                         <li>${service.name} - $${service.basePrice} / ${service.per}</li>
                     `).join('')}
                 </ul>
-                <button class="buy-button" onclick="router.navigate('/platform/${platform}')">
+                <a href="https://wa.me/5491170964243" class="buy-button" target="_blank">
                     Consultar
-                </button>
+                </a>
             </div>
         </div>
     `,

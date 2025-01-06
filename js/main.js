@@ -1,3 +1,5 @@
+import { router } from './router.js';
+
 // Inicialización y funciones principales
 document.addEventListener('DOMContentLoaded', () => {
     // Iniciar el router

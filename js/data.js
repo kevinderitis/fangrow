@@ -1,4 +1,4 @@
-const platformsData = {
+export const platformsData = {
     spotify: {
         name: 'Spotify',
         icon: 'fab fa-spotify',

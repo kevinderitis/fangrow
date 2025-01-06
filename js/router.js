@@ -1,4 +1,6 @@
-const router = {
+import { components } from "./components";
+
+export const router = {
     routes: {
         '/': () => components.homePage(),
         '/platform/:id': (params) => components.platformPage(params.id)
