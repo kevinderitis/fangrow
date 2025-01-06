@@ -1,11 +1,16 @@
 function updateServicePrice() {
     const select = document.getElementById('service-type');
-    const quantity = parseInt(document.getElementById('quantity').value);
+    const quantityInput = document.getElementById('quantity');
+    const totalElement = document.getElementById('total-price');
+    
+    if (!select || !quantityInput || !totalElement) return;
+    
+    const quantity = parseInt(quantityInput.value) || 0;
     const selectedOption = select.options[select.selectedIndex];
     const basePrice = parseFloat(selectedOption.dataset.price);
     
     const total = (quantity / 1000) * basePrice;
-    document.getElementById('total-price').textContent = `Total: $${total.toFixed(2)}`;
+    totalElement.textContent = `Total: $${total.toFixed(2)}`;
 }
 
 function placeOrder(platform) {

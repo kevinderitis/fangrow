@@ -50,7 +50,7 @@ const components = {
                     `).join('')}
                 </ul>
                 <button class="buy-button" onclick="router.navigate('/platform/${platform}')">
-                    Ver Servicios
+                    Consultar
                 </button>
             </div>
         </div>
@@ -60,7 +60,7 @@ const components = {
         const data = platformsData[platform];
         if (!data) return '<div>Plataforma no encontrada</div>';
 
-        return `
+        const content = `
             ${components.header()}
             <div class="platform-page">
                 <div class="platform-hero" style="--platform-color: ${data.color}">
@@ -75,7 +75,7 @@ const components = {
                             <label for="service-type">Selecciona el Servicio:</label>
                             <select id="service-type" onchange="updateServicePrice()">
                                 ${Object.entries(data.services).map(([key, service]) => `
-                                    <option value="${key}" data-price="${service.basePrice}">${service.name}</option>
+                                    <option class="options" value="${key}" data-price="${service.basePrice}">${service.name}</option>
                                 `).join('')}
                             </select>
                         </div>
@@ -89,6 +89,7 @@ const components = {
                                 step="1000" 
                                 value="5000"
                                 onchange="updateServicePrice()"
+                                oninput="updateServicePrice()"
                             >
                         </div>
 
@@ -102,6 +103,8 @@ const components = {
                 </div>
             </div>
         `;
+
+        return content;
     },
 
     homePage: () => `
@@ -110,7 +113,7 @@ const components = {
             <div class="hero">
                 <h1>Potencia tu Presencia Digital</h1>
                 <p>Impulsa tu carrera, marca o proyecto con seguidores reales y engagement genuino</p>
-                <a href="#plataformas" class="cta-button">Comienza Ahora</a>
+                <a href="https://wa.me/5491170964243" class="cta-button" target="_blank">Comienza Ahora</a>
             </div>
             
             ${components.trustBanner()}
@@ -126,7 +129,7 @@ const components = {
             <section id="contacto" class="whatsapp-section">
                 <h2 class="section-title">¿Listo para Crecer?</h2>
                 <p>Contáctanos directamente por WhatsApp para una atención personalizada</p>
-                <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
+                <a href="https://wa.me/5491170964243" class="whatsapp-button" target="_blank">
                     <i class="fab fa-whatsapp"></i>
                     Contactar por WhatsApp
                 </a>
@@ -145,7 +148,7 @@ const components = {
                     </div>
                     <div class="footer-section">
                         <h3>Contacto</h3>
-                        <p>WhatsApp: +1234567890</p>
+                        <p>WhatsApp: +5491170964243</p>
                     </div>
                 </div>
             </footer>

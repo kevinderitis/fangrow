@@ -27,15 +27,18 @@ const router = {
         }
         return null;
     },
-
     handleRoute: function() {
         const path = window.location.pathname;
         const route = this.matchRoute(path);
         if (route) {
             const content = route.handler(route.params);
             document.getElementById('app').innerHTML = content;
+            const serviceType = document.getElementById('service-type');
+            if (serviceType) {
+                updateServicePrice();
+            }
         } else {
-            document.getElementById('app').innerHTML = '<h1>404 - Page Not Found</h1>';
+            document.getElementById('app').innerHTML = components.homePage();
         }
     }
 };
